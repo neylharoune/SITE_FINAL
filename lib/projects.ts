@@ -10,7 +10,7 @@ export const projects: Project[] = [
     description: "Application web de gestion de réservations pour un restaurant familial.",
     longDescription: "Gestion complète des flux clients, automatisation des e-mails de confirmation via Flask-Mail, interface responsive. Projet solo conçu et déployé de A à Z.",
     tags: ["Python", "Flask", "Flask-Mail", "JavaScript", "HTML/CSS"],
-    image: "/images/yemma.png",
+    image: "/images/resto2.png",
     accentColor: "#C4748A",
     modal: {
       details: [
@@ -33,7 +33,7 @@ export const projects: Project[] = [
   description: "Implémentation d'une structure de tas (maxHeap) sous forme d'arbre et de tableau, avec tri par tas et analyse de performances.",
   longDescription: "Projet L3 PRAV : mise en œuvre complète d'un tas binaire en Java via deux approches — arbre presque complet (HeapTree) et tableau indexé (HeapArray). Inclut siftUp, siftDown, extractMax et heapSort, avec comparaison de performances face au quickSort sur des listes aléatoires et partiellement triées.",
   tags: ["Java", "Algorithmique", "Arbres binaires", "Structures de données", "Complexité"],
-  image: "/images/circuits.png",
+  image: "/images/tas.jpg",
   accentColor: "#7A9EAA",
   modal: {
     details: [
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     description: "Conception matérielle bas niveau : montre numérique, multiplieur/diviseur, FSM, récepteur série.",
     longDescription: "4 TPs de conception sous Logisim-Evolution : montre numérique 24h avec BCD, multiplieur/diviseur 8 bits, machines à états finis, récepteur série avec parité.",
     tags: ["Logisim-Evolution", "FSM", "BCD", "UT / UC", "REQ/ACK"],
-    image: "/images/circuits.png",
+    image: "/images/pfo.JPG",
     accentColor: "#8A9EAA",
     modal: {
       details: [
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     description: "Jeu de Rami complet en C++ avec gestion des combinaisons, défausse et suggestions intelligentes.",
     longDescription: "Implémentation complète avec listes chaînées, détection des combinaisons, gestion de la défausse et suggestions.",
     tags: ["C++", "Listes chaînées", "POO", "Algorithmique"],
-    image: "/images/brelan.png",
+    image: "/images/carte1.jpg",
     accentColor: "#9A7AAA",
     modal: {
       details: [
