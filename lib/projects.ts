@@ -1,79 +1,120 @@
-export interface Project {
-  id: string;
-  year: string;
-  type: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  tags: string[];
-  color: string; // accent color for the card
-  image?: string; // path in /public
-  highlights: string[];
-}
+import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
     id: "yemma",
+    title: "App Réservations",
+    subtitle: "Restaurant Yemma",
     year: "2026",
-    type: "Projet personnel",
-    title: "Restaurant Yemma",
-    subtitle: "App de gestion de réservations",
-    description:
-      "Application web complète pour un restaurant : gestion des flux clients, automatisation des e-mails de confirmation, interface responsive. Développée de A à Z en solo.",
+    type: "personnel",
+    description: "Application web de gestion de réservations pour un restaurant familial.",
+    longDescription: "Gestion complète des flux clients, automatisation des e-mails de confirmation via Flask-Mail, interface responsive. Projet solo conçu et déployé de A à Z.",
     tags: ["Python", "Flask", "Flask-Mail", "JavaScript", "HTML/CSS"],
-    color: "#D4A85A",
-    highlights: [
-      "Gestion des réservations en temps réel",
-      "Envoi automatique d'e-mails de confirmation",
-      "Interface responsive mobile-first",
-    ],
+    image: "/images/yemma.png",
+    accentColor: "#C4748A",
+    modal: {
+      details: [
+        "Système de réservation en ligne avec choix de créneaux horaires",
+        "Envoi automatique d'e-mails de confirmation via Flask-Mail",
+        "Interface d'administration pour gérer les réservations",
+        "Design responsive adapté mobile et desktop",
+        "Base de données pour stocker les réservations clients",
+      ],
+      downloadLabel: "Télécharger le code source",
+      downloadHref: "/downloads/yemma.zip",
+    },
   },
+  {
+  id: "tas",
+  title: "Structure de Tas",
+  subtitle: "L3 PRAV — Projet algorithmique",
+  year: "2025–2026",
+  type: "académique",
+  description: "Implémentation d'une structure de tas (maxHeap) sous forme d'arbre et de tableau, avec tri par tas et analyse de performances.",
+  longDescription: "Projet L3 PRAV : mise en œuvre complète d'un tas binaire en Java via deux approches — arbre presque complet (HeapTree) et tableau indexé (HeapArray). Inclut siftUp, siftDown, extractMax et heapSort, avec comparaison de performances face au quickSort sur des listes aléatoires et partiellement triées.",
+  tags: ["Java", "Algorithmique", "Arbres binaires", "Structures de données", "Complexité"],
+  image: "/images/circuits.png",
+  accentColor: "#7A9EAA",
+  modal: {
+    details: [
+      "Implémentation de BinaryTreeAlmostComplete avec siftUp et siftDown",
+      "HeapTree : tas sous forme d'arbre binaire ordonné presque complet",
+      "HeapArray : tas sous forme de tableau avec accès en O(1) par index",
+      "heapSort en O(n log n) comparé au quickSort",
+      "Analyse de performances sur 10 à 10 000 000 éléments",
+    ],
+    downloadLabel: "Voir le code source",
+    downloadHref: "/downloads/tas.zip",
+  },
+},
   {
     id: "circuits",
-    year: "2025–2026",
-    type: "Académique · L3 PFO",
     title: "Circuits Numériques",
-    subtitle: "Conception matérielle & FSM",
-    description:
-      "Série de 4 TPs de conception matérielle sur Logisim-Evolution : montre numérique 24h (BCD), multiplieur/diviseur 8 bits avec algorithme conçu de zéro, machines à états finis, récepteur série avec détection de parité.",
-    tags: ["Logisim-Evolution", "FSM", "BCD", "Arithmétique binaire", "REQ/ACK"],
-    color: "#7A9CCC",
-    highlights: [
-      "Montre numérique 24h avec afficheurs BCD",
-      "Multiplieur/Diviseur 8 bits (UT + UC)",
-      "Récepteur série & détection d'erreur de parité",
-    ],
+    subtitle: "L3 PFO — Série de 4 TPs",
+    year: "2025–2026",
+    type: "académique",
+    description: "Conception matérielle bas niveau : montre numérique, multiplieur/diviseur, FSM, récepteur série.",
+    longDescription: "4 TPs de conception sous Logisim-Evolution : montre numérique 24h avec BCD, multiplieur/diviseur 8 bits, machines à états finis, récepteur série avec parité.",
+    tags: ["Logisim-Evolution", "FSM", "BCD", "UT / UC", "REQ/ACK"],
+    image: "/images/circuits.png",
+    accentColor: "#8A9EAA",
+    modal: {
+      details: [
+        "TP1 : Décodeur 7 segments (tables de Karnaugh + multiplexeur 16 entrées)",
+        "TP2 : Montre numérique 24h avec compteurs BCD et afficheurs 7 segments",
+        "TP3 : Machine à états finis (chenillard 8 bits) + récepteur série avec détection d'erreur de parité",
+        "TP4 : Multiplieur/diviseur 8 bits — algorithme de division par soustractions successives conçu de zéro, avec UT et UC",
+      ],
+      downloadLabel: "Télécharger le compte-rendu",
+      downloadHref: "/downloads/circuits.zip",
+    },
   },
   {
-    id: "rami-site",
+    id: "site-rami",
+    title: "Site Vitrine",
+    subtitle: "Rami Simplifié",
     year: "2024",
-    type: "Académique · L1 Angers",
-    title: "Site Vitrine Rami",
-    subtitle: "Site web multi-pages",
-    description:
-      "Site web accompagnant le projet Rami : présentation des règles, explication de l'algorithme C++, page membres. Animations CSS au scroll, navigation fluide entre pages.",
+    type: "académique",
+    description: "Site web multi-pages présentant les règles, l'algorithme et l'équipe du projet Rami.",
+    longDescription: "Site web 3 pages avec animations CSS au scroll, navigation fluide, design responsive.",
     tags: ["HTML", "CSS", "JavaScript", "Responsive", "Animations CSS"],
-    color: "#A8C67A",
-    highlights: [
-      "3 pages interconnectées",
-      "Animations au scroll",
-      "Design beige chaleureux",
-    ],
+    image: "/images/cards.jpg",
+    accentColor: "#A67C52",
+    modal: {
+      details: [
+        "Page Accueil : présentation des règles du jeu et des combinaisons (brelan, suite, carré) avec images",
+        "Page Algorithme : explication détaillée du programme C++ (structures, fonctions, logique de jeu)",
+        "Page Membres : présentation de l'équipe avec photos et descriptions",
+        "Animations CSS au scroll avec Intersection Observer",
+        "Navigation multi-pages avec header et footer cohérents",
+      ],
+      downloadLabel: "Télécharger le site",
+      downloadHref: "/downloads/site-rami.zip",
+    },
   },
   {
-    id: "rami-cpp",
-    year: "2024",
-    type: "Académique · L1 Angers",
+    id: "rami",
     title: "Jeu de Rami",
-    subtitle: "Moteur de jeu en C++",
-    description:
-      "Développement complet d'un jeu de Rami en C++. Logique métier entière : création et mélange du jeu, distribution, détection des brelans/suites/carrés, gestion de la défausse et suggestions de jeu.",
-    tags: ["C++", "Listes chaînées", "Algorithmique", "Logique métier"],
-    color: "#CC8A7A",
-    highlights: [
-      "Détection automatique des combinaisons",
-      "Gestion de la défausse avec suggestions",
-      "Structures de données personnalisées",
-    ],
+    subtitle: "C++ — Projet L1",
+    year: "2024",
+    type: "académique",
+    description: "Jeu de Rami complet en C++ avec gestion des combinaisons, défausse et suggestions intelligentes.",
+    longDescription: "Implémentation complète avec listes chaînées, détection des combinaisons, gestion de la défausse et suggestions.",
+    tags: ["C++", "Listes chaînées", "POO", "Algorithmique"],
+    image: "/images/brelan.png",
+    accentColor: "#9A7AAA",
+    modal: {
+      details: [
+        "Création et mélange d'un jeu de 104 cartes avec structures de données en C++",
+        "Listes chaînées pour représenter la main de chaque joueur",
+        "Détection automatique des brelans, suites et carrés",
+        "Gestion de la défausse avec détection des cartes mortes (défaussées deux fois)",
+        "Suggestions intelligentes de défausse selon l'état du jeu",
+        "Vérification et modification des combinaisons par l'utilisateur",
+        "Distribution de 14 cartes par joueur, affichage trié par couleur",
+      ],
+      downloadLabel: "Télécharger le code C++",
+      downloadHref: "/downloads/rami.zip",
+    },
   },
 ];
