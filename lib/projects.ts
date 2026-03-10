@@ -10,7 +10,7 @@ export const projects: Project[] = [
     description: "Application web de gestion de réservations pour un restaurant familial.",
     longDescription: "Gestion complète des flux clients, automatisation des e-mails de confirmation via Flask-Mail, interface responsive. Projet solo conçu et déployé de A à Z.",
     tags: ["Python", "Flask", "Flask-Mail", "JavaScript", "HTML/CSS"],
-    image: "/images/resto2.png",
+    image: "/images/resto2.jpg",
     accentColor: "#C4748A",
     modal: {
       details: [
