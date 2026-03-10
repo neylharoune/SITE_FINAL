@@ -92,7 +92,7 @@ export default function Hero() {
           <div className="absolute inset-[-14px] rounded-full border border-accent/20" />
           <div className="absolute inset-[-28px] rounded-full border border-accent/10" />
           <Image
-            src="/images/neyla.png"
+            src="/images/téléchargement.png"
             alt="Neyla Haroune"
             fill
             className="object-cover object-center rounded-full shadow-lg"
