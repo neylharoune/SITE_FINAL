@@ -104,7 +104,7 @@ longDescription: "Projet personnel inspiré d'un besoin réel observé au restau
     accentColor: "#9A7AAA",
     modal: {
       details: [
-        "Création et mélange d'un jeu de 104 cartes avec structures de données en C++",
+        "Création t mélange d'un jeu de 104 cartes avec structures de données en C++",
         "Listes chaînées pour représenter la main de chaque joueur",
         "Détection automatique des brelans, suites et carrés",
         "Gestion de la défausse avec détection des cartes mortes (défaussées deux fois)",
