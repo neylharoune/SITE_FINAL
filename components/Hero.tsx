@@ -94,7 +94,7 @@ export default function Hero() {
           }}
         />
         <Image
-          src="/images/neyla.png"
+          src="/images/coucou.jpg"
           alt="Neyla Haroune"
           fill
           className="object-cover z-10"
