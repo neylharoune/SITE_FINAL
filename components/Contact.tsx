@@ -23,7 +23,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4">
+          className="flex flex-col sm:flex-row gap-4 flex-wrap">
           <a href="mailto:neylaharoune04@gmail.com"
             className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full text-[0.82rem] font-medium no-underline transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-md"
             style={{ background: "#C4748A", color: "#fff" }}>
@@ -40,6 +40,17 @@ export default function Contact() {
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a2 2 0 012-1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
             06 25 17 30 56
+          </a>
+          <a href="https://www.linkedin.com/in/neyla-haroune-04a8b3298/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full text-[0.82rem] font-medium no-underline transition-all duration-200 hover:-translate-y-1"
+            style={{ background: "#fff", color: "#B08090", border: "1px solid #EDD5DC" }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
           </a>
         </motion.div>
       </div>
