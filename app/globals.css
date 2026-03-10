@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FDF6F0;
+  --surface: #FFFFFF;
+  --surface2: #FAF0F4;
+  --border: #EDD5DC;
+  --ink: #3D2030;
+  --muted: #B08090;
+  --accent: #C4748A;
+  --accent2: #E8A0B0;
+  --blush: #F5DCE4;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track { -ms-overflow-style: none; scrollbar-width: none; }
