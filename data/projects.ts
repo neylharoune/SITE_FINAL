@@ -7,8 +7,8 @@ export const projects: Project[] = [
     subtitle: "Restaurant Yemma",
     year: "2026",
     type: "personnel",
-    description: "Application web de gestion de réservations développée pour le restaurant où je travaille en temps partiel.",   
-    longDescription: "Développée pour répondre à un besoin réel du restaurant où je travaille, cette application gère les créneaux midi/soir, sélectionne automatiquement le type de table selon le nombre de convives, et envoie des e-mails de confirmation via Flask-Mail.",    tags: ["Python", "Flask", "Flask-Mail", "JavaScript", "HTML/CSS"],
+description: "Application web de réservation inspirée du restaurant où je travaille, avec interface utilisateur, logique métier et envoi d'e-mails automatique.",
+longDescription: "Projet personnel inspiré d'un besoin réel observé au restaurant où je travaille en temps partiel. Frontend en HTML/CSS/JS, backend Flask avec vérification des créneaux (midi/soir), sélection automatique du type de table (DUO, QUATRO, FAMILLE) et envoi d'e-mails de confirmation via Flask-Mail. Développé et testé en local.",       tags: ["Python", "Flask", "Flask-Mail", "JavaScript", "HTML/CSS"],
     image: "/images/resto2.jpg",
     accentColor: "#C4748A",
     modal: {
