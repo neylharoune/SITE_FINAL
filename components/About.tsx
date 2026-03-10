@@ -3,10 +3,11 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const skills = [
-  { category: "Langages", items: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript", "SQL", "WhyML"] },
-  { category: "Frameworks", items: ["Flask", "Next.js", "React"] },
-  { category: "Outils", items: ["Git", "Docker", "Linux", "Logisim-Evolution", "Why3"] },
-  { category: "Bases de données", items: ["MySQL", "PostgreSQL"] },
+  { category: "Langages", items: ["Python", "Java", "C", "R", "WhyML", "TypeScript", "Assembleur RISC-V", "SQL"] },
+  { category: "Web", items: ["HTML", "CSS", "JavaScript", "Flask"] },
+  { category: "Théorie", items: ["Théorie des Graphes", "Langages formels", "Compilation", "Logique", "Algorithmique"] },
+  { category: "Systèmes & Réseaux", items: ["Linux/Unix", "Bash", "TCP/UDP/IP", "DNS", "Modèle OSI"] },
+  { category: "Outils", items: ["Git", "Wireshark", "Logisim", "LaTeX", "MySQL", "PostgreSQL", "VS Code", "PlantUML"] },
 ];
 
 export default function About() {
@@ -27,9 +28,8 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-16 items-start">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}>
           <div className="space-y-4 text-[0.97rem] leading-[1.92] text-muted font-light">
-            <p>Étudiante en <span className="text-ink font-medium">L3 Informatique</span> à l&apos;Université de Rennes, candidate en Master. Passionnée par la conception de systèmes, du bas niveau matériel au développement web.</p>
-            <p>Mon parcours m&apos;a amenée de <span className="text-ink font-medium">Tizi Ouzou</span> à <span className="text-ink font-medium">Angers</span> puis <span className="text-ink font-medium">Rennes</span>, avec une formation solide en algorithmique, structures de données, systèmes et réseaux.</p>
-            <p>Trilingue (français, anglais B2, kabyle/arabe), j&apos;aborde les problèmes avec rigueur et curiosité.</p>
+            <p>De <span className="text-ink font-medium">Tizi Ouzou</span> à <span className="text-ink font-medium">Angers</span> puis <span className="text-ink font-medium">Rennes</span>, mon parcours m&apos;a appris à toujours chercher le lien entre les concepts et leur mise en œuvre — de la logique formelle aux systèmes bas niveau, en passant par l&apos;algorithmique et les réseaux.</p>
+            <p>Trilingue (français, anglais B2, kabyle/arabe), j&apos;aborde chaque problème avec rigueur et curiosité.</p>
           </div>
 
           <div className="mt-10 space-y-5">

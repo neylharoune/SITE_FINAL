@@ -48,8 +48,7 @@ export default function Hero() {
 
         <motion.p {...fadeUp(0.36)}
           className="text-muted text-[1rem] leading-[1.88] max-w-[420px] mb-9 font-light">
-          Je conçois des circuits numériques, développe des applications web et explore les systèmes bas niveau. Candidate en Master Informatique.
-        </motion.p>
+          J'aborde l'informatique avec autant de curiosité pour la théorie que pour le code. Candidate en Master Informatique.        </motion.p>
 
         <motion.div {...fadeUp(0.5)} className="flex items-center gap-5 flex-wrap mb-12">
           <a href="#projets"
