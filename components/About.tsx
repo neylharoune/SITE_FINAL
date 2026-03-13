@@ -28,7 +28,7 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-16 items-start">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}>
           <div className="space-y-4 text-[0.97rem] leading-[1.92] font-light" style={{ color: "#6B3A52" }}>
-            <p>De <span className="font-medium" style={{ color: "#3D2030" }}>Tizi Ouzou</span> à <span className="font-medium" style={{ color: "#3D2030" }}>Angers</span> puis <span className="font-medium" style={{ color: "#3D2030" }}>Rennes</span>, mon parcours m&apos;a appris à toujours chercher le lien entre les concepts et leur mise en œuvre — de la logique formelle aux systèmes bas niveau, en passant par l&apos;algorithmique et les réseaux.</p>
+            <p>De <span className="font-medium" style={{ color: "#3D2030" }}>Tizi Ouzou</span> à <span className="font-medium" style={{ color: "#3D2030" }}>Angers</span> puis <span className="font-medium" style={{ color: "#3D2030" }}>Rennes</span>, mon parcours m&apos;a appris à toujours chercher le lien entre les concepts et leur mise en œuvre, de la logique formelle aux systèmes bas niveau, en passant par l&apos;algorithmique et les réseaux.</p>
             <p>Trilingue (français, anglais B2, kabyle/arabe), j&apos;aborde chaque problème avec rigueur et curiosité.</p>
           </div>
 
