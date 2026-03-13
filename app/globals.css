@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --bg: #FDF6F0;
-  --surface: #FFFFFF;
-  --surface2: #FAF0F4;
-  --border: #EDD5DC;
+  --bg: #F5E6EE;
+  --surface: #FDF0F5;
+  --surface2: #EDD5E2;
+  --border: #D9A8BB;
   --ink: #3D2030;
   --muted: #B08090;
   --accent: #C4748A;
   --accent2: #E8A0B0;
-  --blush: #F5DCE4;
+  --blush: #E8C4D4;
 }
 
 html { scroll-behavior: smooth; }
