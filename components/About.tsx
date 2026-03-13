@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const skills = [
-  { category: "Langages", items: ["Python", "Java", "C", "R", "WhyML", "TypeScript", "Assembleur RISC-V", "SQL"] },
+  { category: "Langages", items: ["Python", "Java", "C", "C++", "WhyML", "TypeScript", "Assembleur RISC-V", "SQL"] },
   { category: "Web", items: ["HTML", "CSS", "JavaScript", "Flask"] },
   { category: "Théorie", items: ["Théorie des Graphes", "Langages formels", "Compilation", "Logique", "Algorithmique"] },
   { category: "Systèmes & Réseaux", items: ["Linux/Unix", "Bash", "TCP/UDP/IP", "DNS", "Modèle OSI"] },
