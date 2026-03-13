@@ -39,7 +39,6 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
         transform: hovered ? "translateY(-8px)" : "translateY(0)",
       }}
     >
-      {/* Image */}
       <div className="relative w-full h-[180px] overflow-hidden" style={{ background: "#FAF0F4" }}>
         <Image src={project.image} alt={project.title} fill
           className="object-cover transition-transform duration-700"
@@ -47,7 +46,6 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
         />
         <div className="absolute inset-0"
           style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(255,255,255,0.9) 100%)" }} />
-
         <div className="absolute top-3 left-3">
           <span className="text-[0.62rem] font-semibold tracking-[0.1em] uppercase px-3 py-1 rounded-full"
             style={{
@@ -63,7 +61,6 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
           style={{ color: "rgba(61,32,48,0.4)" }}>{project.year}</div>
       </div>
 
-      {/* Content */}
       <div className="p-5 flex flex-col gap-2.5">
         <div>
           <p className="text-[0.66rem] font-medium tracking-[0.14em] uppercase mb-0.5 text-accent">{project.subtitle}</p>
@@ -76,8 +73,6 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
             <span className="text-[0.65rem] font-medium px-2.5 py-1 rounded-full text-muted">+{project.tags.length - 3}</span>
           )}
         </div>
-
-        {/* "Voir plus" hint */}
         <div className="flex items-center gap-1.5 pt-2 mt-auto"
           style={{ color: "#C4748A", opacity: hovered ? 1 : 0.5, transition: "opacity 0.3s" }}>
           <span className="text-[0.72rem] font-medium tracking-[0.08em]">Voir le détail</span>
@@ -124,7 +119,7 @@ export default function ProjectCarousel({ projects }: Props) {
     <>
       <section id="projets" className="pt-24 pb-20" ref={sectionRef}
         style={{ background: "linear-gradient(180deg, #FDF6F0 0%, #FAF0F4 100%)" }}>
-        <div className="px-[6vw] mb-10 flex items-end justify-between">
+        <div className="px-[6vw] mb-10">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-accent mb-2 flex items-center gap-2">
               <span className="block w-6 h-px bg-accent" /> Réalisations
@@ -132,46 +127,59 @@ export default function ProjectCarousel({ projects }: Props) {
             <h2 className="font-serif font-light text-[clamp(2rem,4vw,3rem)] leading-tight text-ink">Projets</h2>
             <p className="text-muted text-[0.84rem] mt-1 font-light">Clique sur un projet pour en savoir plus</p>
           </motion.div>
-
-          <div className="hidden md:flex gap-3">
-            {([["left", "M10 3L5 8l5 5"], ["right", "M6 3l5 5-5 5"]] as const).map(([dir, d]) => (
-              <button key={dir} onClick={() => scroll(dir)}
-                disabled={dir === "left" ? !canScrollLeft : !canScrollRight}
-                className="w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 disabled:opacity-25 hover:bg-blush hover:border-accent"
-                style={{ borderColor: "#EDD5DC", color: "#C4748A" }}>
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d={d}/>
-                </svg>
-              </button>
-            ))}
-          </div>
         </div>
 
-        <div ref={trackRef}
-          className="carousel-track flex gap-5 overflow-x-auto px-[6vw] pb-4"
-          style={{ cursor: "grab" }}
-          onMouseDown={(e) => {
-            const el = trackRef.current;
-            if (!el) return;
-            const startX = e.pageX - el.offsetLeft;
-            const scrollLeft = el.scrollLeft;
-            const onMove = (ev: MouseEvent) => {
-              el.style.cursor = "grabbing";
-              el.scrollLeft = scrollLeft - (ev.pageX - el.offsetLeft - startX);
-            };
-            const onUp = () => {
-              el.style.cursor = "grab";
-              window.removeEventListener("mousemove", onMove);
-              window.removeEventListener("mouseup", onUp);
-            };
-            window.addEventListener("mousemove", onMove);
-            window.addEventListener("mouseup", onUp);
-          }}
-        >
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} onClick={() => setActiveProject(project)} />
-          ))}
-          <div className="flex-shrink-0 w-[2vw]" />
+        {/* Carousel avec flèches flottantes */}
+        <div className="relative">
+
+          {/* Flèche gauche */}
+          <button
+            onClick={() => scroll("left")}
+            disabled={!canScrollLeft}
+            className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center transition-all duration-200 disabled:opacity-0 hover:scale-110 shadow-lg"
+            style={{ background: "#C4748A", color: "#fff" }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M10 3L5 8l5 5"/>
+            </svg>
+          </button>
+
+          {/* Flèche droite */}
+          <button
+            onClick={() => scroll("right")}
+            disabled={!canScrollRight}
+            className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full items-center justify-center transition-all duration-200 disabled:opacity-0 hover:scale-110 shadow-lg"
+            style={{ background: "#C4748A", color: "#fff" }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M6 3l5 5-5 5"/>
+            </svg>
+          </button>
+
+          <div ref={trackRef}
+            className="carousel-track flex gap-5 overflow-x-auto px-[6vw] pb-4"
+            style={{ cursor: "grab" }}
+            onMouseDown={(e) => {
+              const el = trackRef.current;
+              if (!el) return;
+              const startX = e.pageX - el.offsetLeft;
+              const scrollLeft = el.scrollLeft;
+              const onMove = (ev: MouseEvent) => {
+                el.style.cursor = "grabbing";
+                el.scrollLeft = scrollLeft - (ev.pageX - el.offsetLeft - startX);
+              };
+              const onUp = () => {
+                el.style.cursor = "grab";
+                window.removeEventListener("mousemove", onMove);
+                window.removeEventListener("mouseup", onUp);
+              };
+              window.addEventListener("mousemove", onMove);
+              window.addEventListener("mouseup", onUp);
+            }}
+          >
+            {projects.map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} onClick={() => setActiveProject(project)} />
+            ))}
+            <div className="flex-shrink-0 w-[2vw]" />
+          </div>
         </div>
       </section>
 
