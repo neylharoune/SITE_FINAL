@@ -27,8 +27,8 @@ export default function About() {
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}>
-          <div className="space-y-4 text-[0.97rem] leading-[1.92] text-muted font-light">
-            <p>De <span className="text-ink font-medium">Tizi Ouzou</span> à <span className="text-ink font-medium">Angers</span> puis <span className="text-ink font-medium">Rennes</span>, mon parcours m&apos;a appris à toujours chercher le lien entre les concepts et leur mise en œuvre — de la logique formelle aux systèmes bas niveau, en passant par l&apos;algorithmique et les réseaux.</p>
+          <div className="space-y-4 text-[0.97rem] leading-[1.92] font-light" style={{ color: "#6B3A52" }}>
+            <p>De <span className="font-medium" style={{ color: "#3D2030" }}>Tizi Ouzou</span> à <span className="font-medium" style={{ color: "#3D2030" }}>Angers</span> puis <span className="font-medium" style={{ color: "#3D2030" }}>Rennes</span>, mon parcours m&apos;a appris à toujours chercher le lien entre les concepts et leur mise en œuvre — de la logique formelle aux systèmes bas niveau, en passant par l&apos;algorithmique et les réseaux.</p>
             <p>Trilingue (français, anglais B2, kabyle/arabe), j&apos;aborde chaque problème avec rigueur et curiosité.</p>
           </div>
 
@@ -39,10 +39,10 @@ export default function About() {
               { year: "2022–2023", school: "Université de Tizi Ouzou", degree: "L1 Informatique" },
             ].map(({ year, school, degree }) => (
               <div key={year} className="flex gap-5 items-start">
-                <div className="text-[0.68rem] text-muted tracking-wider whitespace-nowrap pt-0.5 w-28 shrink-0">{year}</div>
-                <div className="border-l-2 pl-5" style={{ borderColor: "#EDD5DC" }}>
+                <div className="text-[0.68rem] tracking-wider whitespace-nowrap pt-0.5 w-28 shrink-0" style={{ color: "#7A4060" }}>{year}</div>
+                <div className="border-l-2 pl-5" style={{ borderColor: "#C4748A" }}>
                   <div className="text-[0.9rem] font-medium text-ink">{degree}</div>
-                  <div className="text-[0.78rem] text-muted mt-0.5">{school}</div>
+                  <div className="text-[0.78rem] mt-0.5" style={{ color: "#7A4060" }}>{school}</div>
                 </div>
               </div>
             ))}
@@ -52,12 +52,12 @@ export default function About() {
         <motion.div initial={{ opacity: 0, x: 20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.25 }} className="space-y-6">
           {skills.map(({ category, items }) => (
             <div key={category}>
-              <p className="text-[0.67rem] font-medium tracking-[0.15em] uppercase mb-3 text-muted">{category}</p>
+              <p className="text-[0.67rem] font-medium tracking-[0.15em] uppercase mb-3" style={{ color: "#7A4060" }}>{category}</p>
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
                   <span key={item}
                     className="text-[0.76rem] px-3 py-1.5 rounded-full transition-all duration-200 hover:border-accent/60 hover:text-accent cursor-default font-light"
-                    style={{ background: "#FAF0F4", border: "1px solid #EDD5DC", color: "#B08090" }}>
+                    style={{ background: "#FAF0F4", border: "1px solid #C4748A", color: "#6B3A52" }}>
                     {item}
                   </span>
                 ))}
