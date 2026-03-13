@@ -62,6 +62,10 @@ export default function Hero() {
             className="text-[0.76rem] font-medium tracking-[0.1em] uppercase text-muted hover:text-accent transition-all no-underline border-b border-border hover:border-accent pb-0.5">
             Me contacter
           </a>
+          <a href="/downloads/cv.pdf" download
+          className="text-[0.76rem] font-medium tracking-[0.1em] uppercase text-muted hover:text-accent transition-all no-underline border-b border-border hover:border-accent pb-0.5">
+          Télécharger mon CV
+          </a>
         </motion.div>
 
         <motion.div {...fadeUp(0.62)} className="flex gap-8">
