@@ -124,7 +124,7 @@ export default function ProjectCarousel({ projects }: Props) {
     <>
       <section id="projets" className="pt-24 pb-20" ref={sectionRef}
         style={{ background: "linear-gradient(180deg, #FDF6F0 0%, #FAF0F4 100%)" }}>
-        <div className="px-[6vw] mb-10">
+        <div className="px-[6vw] mb-10 flex items-end justify-between">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-accent mb-2 flex items-center gap-2">
               <span className="block w-6 h-px bg-accent" /> Réalisations
@@ -132,6 +132,19 @@ export default function ProjectCarousel({ projects }: Props) {
             <h2 className="font-serif font-light text-[clamp(2rem,4vw,3rem)] leading-tight text-ink">Projets</h2>
             <p className="text-muted text-[0.84rem] mt-1 font-light">Clique sur un projet pour en savoir plus</p>
           </motion.div>
+
+          <div className="hidden md:flex gap-3">
+            {([["left", "M10 3L5 8l5 5"], ["right", "M6 3l5 5-5 5"]] as const).map(([dir, d]) => (
+              <button key={dir} onClick={() => scroll(dir)}
+                disabled={dir === "left" ? !canScrollLeft : !canScrollRight}
+                className="w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 disabled:opacity-25 hover:bg-blush hover:border-accent"
+                style={{ borderColor: "#EDD5DC", color: "#C4748A" }}>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d={d}/>
+                </svg>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div ref={trackRef}
@@ -160,21 +173,6 @@ export default function ProjectCarousel({ projects }: Props) {
           ))}
           <div className="flex-shrink-0 w-[2vw]" />
         </div>
-
-        {/* Flèches en bas, centrées */}
-        <div className="flex justify-center gap-4 mt-8">
-          {([["left", "M10 3L5 8l5 5"], ["right", "M6 3l5 5-5 5"]] as const).map(([dir, d]) => (
-            <button key={dir} onClick={() => scroll(dir)}
-              disabled={dir === "left" ? !canScrollLeft : !canScrollRight}
-              className="w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-200 disabled:opacity-25 hover:bg-blush hover:border-accent"
-              style={{ borderColor: "#EDD5DC", color: "#C4748A", background: "#fff" }}>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d={d}/>
-              </svg>
-            </button>
-          ))}
-        </div>
-
       </section>
 
       <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
