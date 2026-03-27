@@ -4,8 +4,8 @@ export const projects: Project[] = [
 
   {
   id: "proverif-secu",
-  title: "Sécurité des protocoles cryptographiques",
-  subtitle: "L3 SECU — ProVerif & Messagerie sécurisée",
+  title: "Sécurité des protocoles cryptographiques - en cours",
+  subtitle: "L3 SECU - ProVerif & Messagerie sécurisée",
   year: "2025–2026",
   type: "académique",
   description: "Vérification formelle de protocoles cryptographiques en ProVerif et développement d'une messagerie sécurisée.",
@@ -15,7 +15,7 @@ export const projects: Project[] = [
   accentColor: "#4A7C6A",
   modal: {
     details: [
-  "Modélisation formelle de l'intrus en clauses de Horn (chiffrement, déchiffrement, composition, décomposition) — modèle de Dolev-Yao",
+  "Modélisation formelle de l'intrus en clauses de Horn (chiffrement, déchiffrement, composition, décomposition)",
   "Vérification de propriétés de secret et d'authentification sur deux protocoles cryptographiques",
   "Développement en cours : application de messagerie sécurisée en TypeScript avec chiffrement et authentification des messages",
 ],
