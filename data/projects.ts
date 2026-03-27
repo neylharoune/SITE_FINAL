@@ -11,7 +11,7 @@ export const projects: Project[] = [
   description: "Vérification formelle de protocoles cryptographiques en ProVerif et développement d'une messagerie sécurisée.",
   longDescription: "Modélisation de l'intrus en clauses de Horn, vérification des propriétés de secret et d'authentification sur plusieurs protocoles. Développement en cours d'une application de messagerie en TypeScript avec chiffrement, authentification des messages et protection contre les attaques par rejeu.",
   tags: ["ProVerif", "Cryptographie", "TypeScript", "Authentification", "Chiffrement"],
-  image: "/images/proverif.png",
+  image: "/images/proverif.jpg",
   accentColor: "#4A7C6A",
   modal: {
     details: [
