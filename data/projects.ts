@@ -15,11 +15,10 @@ export const projects: Project[] = [
   accentColor: "#4A7C6A",
   modal: {
     details: [
-      "Modélisation formelle de l'intrus (capacités de chiffrement, déchiffrement, composition, décomposition)",
-      "Vérification de propriétés de secret et d'authentification sur deux protocoles cryptographiques",
-      "Analyse des limites de la sur-approximation de ProVerif (divergence, faux positifs)",
-      "Développement en cours : application de messagerie sécurisée en TypeScript (chiffrement bout-en-bout, authentification, anti-rejeu)",
-    ],
+  "Modélisation formelle de l'intrus en clauses de Horn (chiffrement, déchiffrement, composition, décomposition) — modèle de Dolev-Yao",
+  "Vérification de propriétés de secret et d'authentification sur deux protocoles cryptographiques",
+  "Développement en cours : application de messagerie sécurisée en TypeScript avec chiffrement et authentification des messages",
+],
     downloadLabel: "À venir",
     downloadHref: "",
   },
