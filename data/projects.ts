@@ -1,6 +1,30 @@
 import type { Project } from "@/types";
 
 export const projects: Project[] = [
+
+  {
+  id: "proverif-secu",
+  title: "Sécurité des protocoles cryptographiques",
+  subtitle: "L3 SECU — ProVerif & Messagerie sécurisée",
+  year: "2025–2026",
+  type: "académique",
+  description: "Vérification formelle de protocoles cryptographiques en ProVerif et développement d'une messagerie sécurisée.",
+  longDescription: "Modélisation de l'intrus en clauses de Horn, vérification des propriétés de secret et d'authentification sur plusieurs protocoles. Développement en cours d'une application de messagerie en TypeScript avec chiffrement, authentification des messages et protection contre les attaques par rejeu.",
+  tags: ["ProVerif", "Cryptographie", "TypeScript", "Authentification", "Chiffrement"],
+  image: "/images/proverif.png",
+  accentColor: "#4A7C6A",
+  modal: {
+    details: [
+      "Modélisation formelle de l'intrus (capacités de chiffrement, déchiffrement, composition, décomposition)",
+      "Vérification de propriétés de secret et d'authentification sur deux protocoles cryptographiques",
+      "Analyse des limites de la sur-approximation de ProVerif (divergence, faux positifs)",
+      "Développement en cours : application de messagerie sécurisée en TypeScript (chiffrement bout-en-bout, authentification, anti-rejeu)",
+    ],
+    downloadLabel: "À venir",
+    downloadHref: "",
+  },
+},
+
   {
     id: "yemma",
     title: "App Réservations",
