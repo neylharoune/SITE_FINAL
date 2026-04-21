@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es2015",
-        "inlineSourceMap": true,
-        //"module": "ESNext",
-        "outDir": "./JS/",
-        "rootDir": "./src/"
-    }
-}

@@ -21,8 +21,8 @@ export const projects: Project[] = [
       "Audit de sécurité de 3 messageries : analyse des 9 propriétés cryptographiques et identification des vulnérabilités",
       "Démonstration d'attaques réelles sur des protocoles vulnérables (rejeu, usurpation d'identité...)",
     ],
-    downloadLabel: "À venir",
-    downloadHref: "",
+    downloadLabel: "Télécharger le code source",
+    downloadHref: "/downloads/Securité.zip",
   },
 },
 
