@@ -19,10 +19,10 @@ details: [
   "Vérification de propriétés de secret et d'authentification sur des protocoles cryptographiques",
   "Développement d'une messagerie sécurisée en TypeScript avec chiffrement et authentification des messages",
   "Audit de 3 messageries : analyse des 9 propriétés cryptographiques et identification des vulnérabilités",
-  "Attaque réelle d'une application : exploitation d'une faille XSS via innerHTML — injection d'un mouchard (img onerror) exfiltrant les messages déchiffrés vers un Webhook externe",
+  "Attaque réelle d'une application : exploitation d'une faille XSS via innerHTML - injection d'un mouchard (img onerror) exfiltrant les messages déchiffrés vers un Webhook externe",
 ],
-    downloadLabel: "Voir le code source",
-    downloadHref: "",
+  downloadLabel: "Voir le code sur GitHub",
+  downloadHref: "https://github.com/neylharoune/messagerie-securisee",
   },
 },
 
