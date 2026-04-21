@@ -2,23 +2,25 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
 
-  {
+{
   id: "proverif-secu",
-  title: "Sécurité des protocoles cryptographiques - en cours",
+  title: "Sécurité des protocoles cryptographiques",
   subtitle: "L3 SECU - ProVerif & Messagerie sécurisée",
   year: "2025–2026",
   type: "académique",
-  description: "Vérification formelle de protocoles cryptographiques en ProVerif et développement d'une messagerie sécurisée.",
-  longDescription: "Modélisation de l'intrus en clauses de Horn, vérification des propriétés de secret et d'authentification sur plusieurs protocoles. Développement en cours d'une application de messagerie en TypeScript avec chiffrement, authentification des messages et protection contre les attaques par rejeu.",
-  tags: ["ProVerif", "Cryptographie", "TypeScript", "Authentification", "Chiffrement"],
+  description: "Vérification formelle de protocoles cryptographiques en ProVerif, développement d'une messagerie sécurisée et audit de sécurité d'applications de camarades.",
+  longDescription: "Modélisation de l'intrus en clauses de Horn, vérification des propriétés de secret et d'authentification sur plusieurs protocoles. Développement d'une application de messagerie en TypeScript avec chiffrement, authentification des messages et protection contre les attaques par rejeu. Audit de sécurité de 3 applications : analyse des propriétés cryptographiques (confidentialité, authentification, fraîcheur des messages) et démonstration d'attaques réelles sur des protocoles vulnérables.",
+  tags: ["ProVerif", "Cryptographie", "TypeScript", "Authentification", "Chiffrement", "Audit", "Pentest"],
   image: "/images/proverif.jpg",
   accentColor: "#4A7C6A",
   modal: {
     details: [
-  "Modélisation formelle de l'intrus en clauses de Horn (chiffrement, déchiffrement, composition, décomposition)",
-  "Vérification de propriétés de secret et d'authentification sur deux protocoles cryptographiques",
-  "Développement en cours : application de messagerie sécurisée en TypeScript avec chiffrement et authentification des messages",
-],
+      "Modélisation formelle de l'intrus en clauses de Horn (chiffrement, déchiffrement, composition, décomposition)",
+      "Vérification de propriétés de secret et d'authentification",
+      "Développement d'une application de messagerie sécurisée en TypeScript avec chiffrement et authentification des messages",
+      "Audit de sécurité de 3 messageries : analyse des 9 propriétés cryptographiques et identification des vulnérabilités",
+      "Démonstration d'attaques réelles sur des protocoles vulnérables (rejeu, usurpation d'identité...)",
+    ],
     downloadLabel: "À venir",
     downloadHref: "",
   },

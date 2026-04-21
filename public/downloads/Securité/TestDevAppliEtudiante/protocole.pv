@@ -1,0 +1,136 @@
+(* PROTOCOLE : SECRET + AUTHENTIFICATION + ACCUSE DE RECEPTION (FULL CONTEXT)
+   Notation Alice-Bob :
+   1. A -> B : {tag1, A, m, sign((tag1, A, B, m), sk_sig(A))}_pk(B)
+   2. B -> A : {tag2, B, m, sign((tag2, B, A, m), sk_sig(B))}_pk(A)
+
+
+   - separation des clés, RSA-Enc et RSA-Sig distincts
+   - auth (prop 2), signature liée à l'expéditeur
+   - ANTI-DÉTOURNEMENT (prop 3), signature incluant le 
+     destinataire pour bloquer les attaques de l'intrus
+   - secret (Prop 1 & 7) : Chiffrement hybride RSA+AES
+
+*)
+
+type agent.
+type key.
+
+fun pkey(agent): key.        (* cle publique de chiffrement *)
+fun skey(agent): key.        (* cle privee de chiffrement *)
+fun spkey(agent): key.       (* cle publique de verification signature *)
+fun sskey(agent): key.       (* cle privee de signature *)
+fun enc(key, bitstring): bitstring.
+fun sign(bitstring, key): bitstring.
+fun secret(agent, agent): bitstring.
+fun agent2bitstring(agent): bitstring.
+
+const alice: agent.
+const bob: agent.
+const I: agent.
+const tag1: bitstring.
+const tag2: bitstring.
+
+pred intruder(any_type).
+pred session(agent, agent).
+pred successInit(agent, agent, bitstring).
+pred successResp(agent, agent, bitstring).
+pred successInitAck(agent, agent, bitstring).
+pred commitB(agent, agent, bitstring).
+
+(* test coherence *)
+query successInit(alice, bob, secret(alice, bob)).
+query successResp(alice, bob, secret(alice, bob)).
+query successInitAck(alice, bob, secret(alice, bob)).
+
+(* propriete 1, secret :) *)
+query intruder(secret(alice, bob)).
+query intruder(secret(bob, alice)).
+
+(* propriete 2, authent
+   B ne doit pas accepter un message forge par I *)
+query successResp(alice, bob, secret(I, bob)).
+query successResp(alice, bob, secret(I, alice)).
+
+(* propriete 3, accuse de reception
+   A ne doit pas croire que I a confirme la reception *)
+query successInitAck(alice, bob, secret(I, bob)).
+query successInitAck(alice, bob, secret(I, alice)).
+
+clauses
+
+(* connaissances de l'intrus *)
+intruder(alice);
+intruder(bob);
+intruder(I);
+intruder(tag1);
+intruder(tag2);
+intruder(pkey(alice));
+intruder(pkey(bob));
+intruder(pkey(I));
+intruder(skey(I));
+intruder(spkey(alice));
+intruder(spkey(bob));
+intruder(spkey(I));
+intruder(sskey(I));
+intruder(secret(I, alice));
+intruder(secret(I, bob));
+intruder(agent2bitstring(I));
+
+(* regles de chiffrement asymetrique *)
+forall m: bitstring, k: key;
+  intruder(m) & intruder(k) -> intruder(enc(k, m));
+
+forall a: agent, m: bitstring;
+  intruder(enc(pkey(a), m)) & intruder(skey(a)) -> intruder(m);
+
+(* regles de signature, l'intrus peut signer avec sa cle privee *)
+forall m: bitstring, k: key;
+  intruder(m) & intruder(k) -> intruder(sign(m, k));
+
+
+forall m1: bitstring, m2: bitstring;
+  intruder(m1) & intruder(m2) -> intruder((m1, m2));
+
+forall m1: bitstring, m2: bitstring;
+  intruder((m1, m2)) -> intruder(m1);
+
+forall m1: bitstring, m2: bitstring;
+  intruder((m1, m2)) -> intruder(m2);
+
+session(alice, bob);
+session(bob, alice);
+session(alice, I);
+session(I, alice);
+session(bob, I);
+session(I, bob);
+
+(* MESSAGE 1  A -> B avec le tag1 *)
+forall a: agent, b: agent;
+  session(a, b) ->
+  intruder(enc(pkey(b), (tag1, agent2bitstring(a), secret(a, b), sign((tag1, agent2bitstring(a), agent2bitstring(b), secret(a, b)), sskey(a)))));
+
+forall a: agent, b: agent;
+  session(a, b) ->
+  successInit(a, b, secret(a, b));
+
+(* MESSAGE 2  Reception par B et envoi de l'ACK avec tag2 *)
+(* B dechiffre, lit tag1, et verifie que la signature correspond bien a (tag1 | A | B | m) *)
+forall a: agent, b: agent, m: bitstring;
+  intruder(enc(pkey(b), (tag1, agent2bitstring(a), m, sign((tag1, agent2bitstring(a), agent2bitstring(b), m), sskey(a))))) ->
+  commitB(a, b, m);
+
+(* B renvoie l'ACK signe avec (tag2 | B | A | m) *)
+forall a: agent, b: agent, m: bitstring;
+  commitB(a, b, m) ->
+  intruder(enc(pkey(a), (tag2, agent2bitstring(b), m, sign((tag2, agent2bitstring(b), agent2bitstring(a), m), sskey(b)))));
+
+forall a: agent, b: agent, m: bitstring;
+  commitB(a, b, m) ->
+  successResp(a, b, m);
+
+(* RECEPTION de l'ACK par A *)
+(* A dechiffre, lit tag2, et verifie que la signature correspond bien a (tag2 | B | A | m) *)
+forall a: agent, b: agent, m: bitstring;
+  session(a, b) &
+  intruder(enc(pkey(a), (tag2, agent2bitstring(b), m, sign((tag2, agent2bitstring(b), agent2bitstring(a), m), sskey(b))))) ->
+  successInitAck(a, b, m).
