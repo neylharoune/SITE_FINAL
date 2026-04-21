@@ -27,6 +27,29 @@ details: [
 },
 
   {
+  id: "compilation",
+  title: "Compilateur pour le langage PROJET",
+  subtitle: "L3 Compilation - ANTLR & Machine Virtuelle",
+  year: "2025–2026",
+  type: "académique",
+  description: "Conception d'un compilateur complet pour un langage impératif, de l'analyse lexicale et syntaxique jusqu'à la génération de code pour une machine virtuelle à pile.",
+  longDescription: "Conception d'un compilateur complet pour un langage impératif, de l'analyse lexicale et syntaxique jusqu'à la génération de code pour une machine virtuelle à pile.",
+  tags: ["Java", "ANTLR", "Compilation", "Machine Virtuelle", "Graphes syntaxiques"],
+  image: "/images/compilation.jpg",
+  accentColor: "#5A6A9A",
+  modal: {
+    details: [
+      "Génération de l'analyseur lexical et syntaxique avec ANTLR à partir d'une grammaire formelle",
+      "Construction et parcours de l'arbre syntaxique abstrait (AST)",
+      "Implémentation des contrôles sémantiques (types, portées, déclarations)",
+      "Génération de code objet exécutable sur la machine virtuelle à pile MAPILE",
+    ],
+    downloadLabel: "Voir le code sur GitHub",
+    downloadHref: "https://github.com/neylharoune/Projet-Compilation",
+  },
+},
+
+  {
     id: "yemma",
     title: "App Réservations",
     subtitle: "Restaurant Yemma",
