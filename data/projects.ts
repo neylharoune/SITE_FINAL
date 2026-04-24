@@ -8,7 +8,7 @@ export const projects: Project[] = [
   subtitle: "Projet Personnel - Gouvernance & ISO 27001",
   year: "2026",
   type: "personnel",
-  description: "Conduite d'une analyse de risques complète selon la méthode EBIOS RM de l'ANSSI pour une plateforme e-commerce (ShopNova).",
+  description: "Étude de cas : Analyse de risques complète (EBIOS RM) pour une PME e-commerce fictive visant la conformité ISO 27001.",
   longDescription: "Réalisation d'une étude de sécurité stratégique pour une PME (12M€ CA) visant la conformité ISO 27001 et RGPD. Identification des sources de risque, modélisation de scénarios d'attaque et définition d'un plan de traitement.",
   tags: ["EBIOS RM", "ISO 27001", "RGPD", "MITRE ATT&CK", "Gouvernance", "LaTeX"],
   image: "/images/ebiosrm.png", // Pense à mettre une capture du PDF LaTeX
