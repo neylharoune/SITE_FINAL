@@ -15,12 +15,12 @@ export const projects: Project[] = [
   accentColor: "#1A6B8A",
   modal: {
     details: [
-      "Cadrage et identification des valeurs métiers critiques (500k profils clients, disponibilité du site)", [cite: 8, 11, 16]
-      "Identification des sources de risque (cybercriminels, menaces internes) et évaluation de leurs capacités", [cite: 17, 21]
-      "Élaboration de scénarios stratégiques : exfiltration de BDD, Ransomware (impact estimé à 30k€/jour)", [cite: 26, 27, 28, 29]
-      "Analyse opérationnelle des attaques via le framework MITRE ATT&CK (SQL Injection, Exfiltration C2)", [cite: 32, 35]
-      "Définition d'un plan de traitement des risques aligné sur l'Annexe A de l'ISO 27001 (WAF, EDR, PRA)", [cite: 36, 40]
-      "Évaluation du risque résiduel et recommandations stratégiques pour la Direction", [cite: 42, 43, 44]
+      "Cadrage et identification des valeurs métiers critiques (500k profils clients, disponibilité du site)", 
+      "Identification des sources de risque (cybercriminels, menaces internes) et évaluation de leurs capacités", 
+      "Élaboration de scénarios stratégiques : exfiltration de BDD, Ransomware (impact estimé à 30k€/jour)", 
+      "Analyse opérationnelle des attaques via le framework MITRE ATT&CK (SQL Injection, Exfiltration C2)", 
+      "Définition d'un plan de traitement des risques aligné sur l'Annexe A de l'ISO 27001 (WAF, EDR, PRA)", 
+      "Évaluation du risque résiduel et recommandations stratégiques pour la Direction", 
     ],
     downloadLabel: "Voir le rapport (PDF)",
     downloadHref: "/documents/Analyse_Risques_ShopNova.pdf", // Lien vers ton PDF généré en LaTeX
