@@ -23,7 +23,7 @@ export const projects: Project[] = [
       "Évaluation du risque résiduel et recommandations stratégiques pour la Direction", 
     ],
     downloadLabel: "Voir le rapport (PDF)",
-    downloadHref: "/documents/Analyse_Risques_ShopNova.pdf", // Lien vers ton PDF généré en LaTeX
+    downloadHref: "/downloads/Analyse_Risques_ShopNova.pdf", // Lien vers ton PDF généré en LaTeX
   },
 },
 
