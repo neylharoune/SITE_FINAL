@@ -70,7 +70,6 @@ export default function Hero() {
 
         <motion.div {...fadeUp(0.62)} className="flex gap-8">
           {[
-            { n: "4", label: "Projets" },
             { n: "3", label: "Universités" },
             { n: "B2", label: "Anglais" },
           ].map(({ n, label }) => (

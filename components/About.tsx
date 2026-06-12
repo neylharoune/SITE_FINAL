@@ -34,7 +34,7 @@ export default function About() {
 
           <div className="mt-10 space-y-5">
             {[
-              { year: "2025–Présent", school: "Université de Rennes", degree: "L3 Informatique" },
+              { year: "2025–2026", school: "Université de Rennes", degree: "L3 Informatique" },
               { year: "2023–2025", school: "Université d'Angers", degree: "L1 & L2 Informatique" },
               { year: "2022–2023", school: "Université de Tizi Ouzou", degree: "L1 Informatique" },
             ].map(({ year, school, degree }) => (
