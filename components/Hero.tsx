@@ -41,14 +41,14 @@ export default function Hero() {
 
         <motion.h1 {...fadeUp(0.22)}
           className="font-serif font-light text-[clamp(2.6rem,5vw,4.2rem)] leading-[1.06] tracking-tight mb-5 text-ink">
-          Étudiante en<br />
-          <em className="italic text-accent">L3 Informatique</em><br />
+          Future étudiante en <br />
+          <em className="italic text-accent"> Master Cybersécurité RSSI </em><br />
           à Rennes.
         </motion.h1>
 
         <motion.p {...fadeUp(0.36)}
           className="text-muted text-[1rem] leading-[1.88] max-w-[420px] mb-9 font-light">
-          J'aborde l'informatique avec autant de curiosité pour la théorie que pour le code. Candidate en Master Informatique.        </motion.p>
+          J'aborde l'informatique avec autant de curiosité pour la théorie que pour la pratique.       </motion.p>
 
         <motion.div {...fadeUp(0.5)} className="flex items-center gap-5 flex-wrap mb-12">
           <a href="#projets"
@@ -62,10 +62,10 @@ export default function Hero() {
             className="text-[0.76rem] font-medium tracking-[0.1em] uppercase text-muted hover:text-accent transition-all no-underline border-b border-border hover:border-accent pb-0.5">
             Me contacter
           </a>
-          <a href="/downloads/cv.pdf" download
+          {/* <a href="/downloads/cv.pdf" download
           className="text-[0.76rem] font-medium tracking-[0.1em] uppercase text-muted hover:text-accent transition-all no-underline border-b border-border hover:border-accent pb-0.5">
           Télécharger mon CV
-          </a>
+          </a> */}
         </motion.div>
 
         <motion.div {...fadeUp(0.62)} className="flex gap-8">

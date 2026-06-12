@@ -18,13 +18,13 @@ export default function Contact() {
             Une question ?<br />Prenons contact.
           </h2>
           <p className="text-muted text-[0.92rem] leading-relaxed mb-10 font-light">
-            Disponible pour des opportunités de stage, alternance ou Master.
+            {/* Disponible pour des opportunités de stage, alternance ou Master. */}
           </p>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col sm:flex-row gap-4 flex-wrap">
-          <a href="mailto:neylaharoune04@gmail.com"
+          <a href="mailto:neyla.haroune@etudiant.univ-rennes.fr"
             className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full text-[0.82rem] font-medium no-underline transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-md"
             style={{ background: "#C4748A", color: "#fff" }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
